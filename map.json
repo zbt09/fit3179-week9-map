@@ -2,61 +2,33 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "title": {
     "text": "Public Transport Accessibility in Melbourne (Proportional Symbols by Stop Count, 2025)",
-    "subtitle": "Domain: Public Transport Accessibility \u2022 Units: number of stops (aggregated per hub) \u2022 Projection: Mercator focused on Greater Melbourne",
+    "subtitle": "Domain: Public Transport Accessibility • Units: number of stops (aggregated per hub) • Projection: Mercator focused on Greater Melbourne",
     "anchor": "start"
   },
   "config": {
     "background": "white",
-    "view": {
-      "stroke": "transparent"
-    },
-    "legend": {
-      "title": "Stops (count)"
-    }
+    "view": {"stroke": "transparent"},
+    "legend": {"title": "Stops (count)"}
   },
   "projection": {
     "type": "mercator",
-    "center": [
-      145.0,
-      -37.85
-    ],
+    "center": [145.0, -37.85],
     "scale": 22000,
-    "translate": [
-      480,
-      300
-    ]
+    "translate": [480, 300]
   },
   "width": 960,
   "height": 600,
   "layer": [
     {
-      "data": {
-        "graticule": {
-          "step": [
-            2,
-            2
-          ]
-        }
-      },
-      "mark": {
-        "type": "geoshape",
-        "stroke": "#d9d9d9",
-        "strokeWidth": 0.6
-      }
+      "data": {"graticule": {"step": [2, 2]}},
+      "mark": {"type": "geoshape", "stroke": "#d9d9d9", "strokeWidth": 0.6}
     },
     {
       "data": {
-        "url": "https://raw.githubusercontent.com/deldersveld/topojson/master/countries/australia/australia-states.json",
-        "format": {
-          "type": "topojson",
-          "feature": "australia-state"
-        }
+        "url": "https://raw.githubusercontent.com/codeforamerica/click_that_hood/master/public/data/australia-states.geojson",
+        "format": {"type": "geojson"}
       },
-      "transform": [
-        {
-          "filter": "datum.NAME_1 == 'Victoria'"
-        }
-      ],
+      "transform": [{"filter": "datum.name == 'Victoria'"}],
       "mark": {
         "type": "geoshape",
         "fill": "#f5f7fa",
@@ -65,9 +37,7 @@
       }
     },
     {
-      "data": {
-        "url": "melb_stops.csv"
-      },
+      "data": {"url": "melb_stops.csv"},
       "mark": {
         "type": "circle",
         "opacity": 0.85,
@@ -75,50 +45,23 @@
         "strokeWidth": 0.2
       },
       "encoding": {
-        "longitude": {
-          "field": "lon",
-          "type": "quantitative"
-        },
-        "latitude": {
-          "field": "lat",
-          "type": "quantitative"
-        },
+        "longitude": {"field": "lon", "type": "quantitative"},
+        "latitude": {"field": "lat", "type": "quantitative"},
         "size": {
           "field": "stops",
           "type": "quantitative",
-          "scale": {
-            "range": [
-              30,
-              1200
-            ]
-          },
-          "legend": {
-            "orient": "right"
-          }
+          "scale": {"range": [30, 1200]},
+          "legend": {"orient": "right"}
         },
         "color": {
           "field": "stops",
           "type": "quantitative",
-          "scale": {
-            "scheme": "blues"
-          }
+          "scale": {"scheme": "blues"}
         },
         "tooltip": [
-          {
-            "field": "place",
-            "type": "nominal",
-            "title": "Location"
-          },
-          {
-            "field": "stops",
-            "type": "quantitative",
-            "title": "Stops (count)"
-          },
-          {
-            "field": "note",
-            "type": "nominal",
-            "title": "Notes"
-          }
+          {"field": "place", "type": "nominal", "title": "Location"},
+          {"field": "stops", "type": "quantitative", "title": "Stops (count)"},
+          {"field": "note", "type": "nominal", "title": "Notes"}
         ]
       }
     }
