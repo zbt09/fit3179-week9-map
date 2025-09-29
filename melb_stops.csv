@@ -1,0 +1,15 @@
+place,lat,lon,stops,note
+CBD (Flinders St),-37.8183,144.9671,320,Major interchange: train+tram+bus
+Southern Cross,-37.818,144.9525,260,Regional + metro hub
+Footscray,-37.799,144.901,140,Western interchange
+Sunshine,-37.7883,144.8329,110,Metro/Regional link
+Werribee,-37.9103,144.6617,60,Outer west terminus
+Broadmeadows,-37.6812,144.9199,95,North hub
+Craigieburn,-37.6008,144.947,55,Outer north terminus
+Box Hill,-37.8187,145.1255,120,Eastern tram+train
+Ringwood,-37.815,145.228,85,East hub
+Dandenong,-37.9879,145.214,150,SE interchange
+Clayton,-37.9244,145.1244,90,Monash precinct
+Frankston,-38.1426,145.123,130,Bayside terminus
+Glen Waverley,-37.8804,145.1641,80,Suburban terminus
+Airport (future ref),-37.6733,144.8433,10,Reference marker

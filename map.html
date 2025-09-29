@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>FIT3179 Week 9 Map – Melbourne PT Accessibility</title>
+  <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+  <style>
+    body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; margin: 0; padding: 24px; background:#ffffff; }
+    h1 { margin: 0 0 8px; font-size: 22px; }
+    .meta { color:#555; margin-bottom: 16px; }
+    .footer { margin-top:16px; color:#777; font-size: 12px; }
+    #vis { border: 1px solid #eee; border-radius: 10px; padding: 8px; }
+  </style>
+</head>
+<body>
+  <h1>Public Transport Accessibility in Melbourne</h1>
+  <div class="meta">Proportional symbol map – size & color encode stop count • Projection: Mercator • Reference layer: Victoria boundary • Graticule: 2°</div>
+  <div id="vis"></div>
+  <div class="footer">Tip: Hover for details. Data: mock clusters for Week 9 homework.</div>
+
+  <script type="text/javascript">
+    // Load the spec (local file) and embed
+    const specUrl = "map.json";
+    vegaEmbed('#vis', specUrl, { actions: false }).then(res => {
+      console.log('Vega-Lite map loaded');
+    }).catch(console.error);
+  </script>
+</body>
+</html>
